@@ -1,6 +1,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
+import alias from 'rollup-plugin-alias';
 
 const EMPTY = '__empty__';
 
@@ -15,6 +16,9 @@ export default {
 	plugins: [
 		json(),
 		commonjs(),
+		alias({
+			assert: 'node_modules/assert-jsnext/dist/assert.js'
+		}),
 
 		// handle zlib-backport nonsense
 		{
