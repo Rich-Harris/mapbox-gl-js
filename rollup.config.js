@@ -1,6 +1,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
+import strip from 'rollup-plugin-strip';
 import alias from 'rollup-plugin-alias';
 
 const EMPTY = '__empty__';
@@ -15,6 +16,7 @@ export default {
 	dest: 'dist/mapbox-gl-dev.js',
 	plugins: [
 		json(),
+		strip(),
 		commonjs(),
 		alias({
 			// TODO use the ES versions...
