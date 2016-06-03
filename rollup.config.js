@@ -17,7 +17,9 @@ export default {
 		json(),
 		commonjs(),
 		alias({
-			assert: 'node_modules/assert-jsnext/dist/assert.js'
+			// TODO use the ES versions...
+			assert: 'node_modules/assert-jsnext/dist/assert.js',
+			util: 'node_modules/util-jsnext/dist/util.js'
 		}),
 
 		// handle zlib-backport nonsense

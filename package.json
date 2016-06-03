@@ -42,6 +42,7 @@
     "tls": "0.0.1",
     "unassertify": "^2.0.0",
     "unitbezier": "^0.0.0",
+    "util-jsnext": "^0.10.3",
     "vector-tile": "^1.2.1",
     "vt-pbf": "^2.0.2",
     "webworkify": "^1.0.2"
@@ -99,6 +100,7 @@
     "start-docs": "npm run production && npm run docs && jekyll serve -w",
     "lint": "eslint js test bench",
     "build": "git checkout -- js && node _cjs-to-es && rollup -c",
+    "build:worker": "git checkout -- js && node _cjs-to-es && rollup -c rollup.worker.config.js",
     "build:browserify": "browserify -d js/mapbox-gl.js --standalone mapboxgl > dist/mapbox-gl-dev.js && npm run docs",
     "production": "browserify js/mapbox-gl.js --debug --transform unassertify --plugin [minifyify --map mapbox-gl.js.map --output dist/mapbox-gl.js.map] --standalone mapboxgl > dist/mapbox-gl.js",
     "prepublish": "npm run build && npm run production",
